@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fee Calculator</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Welcome to our fee structure guide!</h1>
+    <p>Here, we break down how we calculate the fees and possible discounts in section 2 for your campaign. Our aim is to ensure transparency and simplicity. Let’s dive in.</p>
+
+
+    <h2>Fee Calculator:</h2>
+    <p>Yes, we offer discounts! Your Activity Score directly influences potential reductions, which specifically apply to the Campaign Support fee.</p>
+
+    <form method="POST" action="/calculate">
+        <label for="promotional_fee">Promotional Charges:</label>
+        <select id="promotional_fee" name="promotional_fee">
+            <option value="4">Level 1 (Harnessing Social Media) - 4%</option>
+            <option value="6">Level 2 (Reaching out via WhatsApp, SMS, and Voice Calls) - 6%</option>
+            <option value="10">Level 3 (Both) - 10%</option>
+        </select>
+        <br />
+        <br />
+        <br />
+
+        <label for="curation_support">curation support Charges:</label>
+        <select id="curation_support" name="curation_support">
+            <option value="3">Yes</option>
+            <option value="0">No</option>
+        </select>
+        <br />
+        <br />
+        <br />
+
+        <h3>Discount Score Calculation:</h3>
+        
+        <label for="population_score">Nature of Population</label>
+        <select id="population_score" name="population_score">
+            <option value="15">Rural</option>
+            <option value="10">Semi-Urban</option>
+            <option value="5">Cosmopolitan & Metropolitan</option>
+        </select>
+        <br />
+        <br />
+
+        <label for="service_score">Nature of Service</label>
+        <select id="service_score" name="service_score">
+            <option value="25">Spiritual & Meditation Initiatives</option>
+            <option value="15">Animal Welfare with a Spiritual Touch</option>
+            <option value="10">Other Spiritual Science Endeavors</option>
+        </select>
+        <br />
+        <br />
+
+        <label for="campaign_value_score">Campaign Budget</label>
+        <select id="campaign_value_score" name="campaign_value_score">
+            <option value="0">Up to Rs.25,000</option>
+            <option value="5">Rs.25,000 to Rs.100,000</option>
+            <option value="10">Rs.100,000 to Rs.500,000</option>
+            <option value="15">Rs.500,000 to Rs.10,00,000</option>
+            <option value="20">Rs.10,00,000/- and above</option>
+        </select>
+        <br />
+        <br />
+
+        <h4><u>Authenticity Score</u></h4>
+        <table>
+            <thead>
+                <tr>
+                    <th>Select the options applicable</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="checkbox" name="checkbox" value=5></td>
+                    <td>Income Tax Returns</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="checkbox" value=5></td>
+                    <td>12A Certification </td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="checkbox" value=10></td>
+                    <td>80G Certification </td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="checkbox" value=5></td>
+                    <td>GST/Labor License </td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="checkbox" value=5></td>
+                    <td>Loyalty Bonus </td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="checkbox" value=5></td>
+                    <td>Transparent Financial Management </td>
+                </tr>
+            </tbody>
+        </table>
+
+
+        <input type="submit" value="Calculate Fee">
+    </form>
+
+    <h2>Fee Breakdown:</h2>
+    <ol>
+        <li>Transaction fee: 2% (By Service provider)</li>
+        <li>Platform Fee: 5% (Discounts available, refer to the “Discounting” section below for more information)</li>
+        <li>Promotional Charges:</li>
+        <ul>
+            <li>Level 1 (Harnessing Social Media): 4%</li>
+            <li>Level 2 (Reaching out via WhatsApp, SMS, and Voice Calls): 6%</li>
+        </ul>
+        <li>Curation Support: (Optional)</li>
+        <p>An additional one time fee of 3% for campaigns needing our specialized touch and guidance which will be collected initially while registering the campaign. Discount score is also applicable for this fee as well along with the Platform fee.</p>
+    </ol>
+
+    <p>Depending on the specifics, your total fee may range from 7% to 20%.</p>
+    <p>The fees are negotiable for Special and Larger campaigns</p>
+
+</body>
+</html>
